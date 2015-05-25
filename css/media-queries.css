@@ -1,0 +1,10 @@
+@media (max-width: 1200px) and (min-width: 960px) {
+	.page-phone{white-space: nowrap;}
+	.page-order_call{padding: 4px 0 0;}
+	.section-more-list__i{width: 24.7%;  margin: 0;}
+    .section-slide_quote {margin: -79px 0 0 6.3%;}
+	.section-slide_quote__txt {width: 71%;}
+	.section-slide_quote img{margin-right: 10px;}
+	.phone-block{white-space: nowrap;}
+    .page-modals .default-button{float: right;}
+}
