@@ -15,6 +15,14 @@ $(document).keydown(function (e) {
 	}
 });
 $(document).ready(function(){
+//	height main bg
+	var defaultHeight = $('.page-section_main__bg').height();
+	$(window).on('resize load', function(){
+		var menuHeight = $('.page-menu._header').innerHeight(),
+			newHeight = defaultHeight - menuHeight;
+		$('.page-section_main__bg').css('height', newHeight + 'px');
+	});
+
 //    modals open
     function openPopup(popUp, open){
         var that = this;
@@ -73,7 +81,7 @@ $(document).ready(function(){
 			}
 		};
 	}
-	var top = new parallaxAll($('.page-section._main'), $('.page-title'));
+	var top = new parallaxAll($('.page-section_main__bg'), $('.page-title'));
 
 //	hide elements
 	function scrollPage(){
@@ -105,14 +113,20 @@ $(document).ready(function(){
         massTopValue.push(pageSection.eq(i).offset().top);
     };
 
-    $(document).on('scroll', function(){
-        var topPosition = $(document).scrollTop();
-        for(var i=0; i<massTopValue.length; i++){
-            if(topPosition>=massTopValue[i]){
-                window.location.hash = '#' + massSection[i];
-            }
-        }
-    });
+	$(document).bind('scroll',function(e){
+		pageSection.each(function(){
+			if (
+				$(this).offset().top < window.pageYOffset + 10
+//begins before top
+				&& $(this).offset().top + $(this).height() > window.pageYOffset + 10
+//but ends in visible area
+//+ 10 allows you to change hash before it hits the top border
+				) {
+				var ind = $(this).index();
+				window.location.hash = '#' + massSection[ind];
+			}
+		});
+	});
 
     function changeBlock(index, block, link, bg){
         var that = this;
@@ -175,30 +189,4 @@ $(document).ready(function(){
         }
 
     }
-//	validate
-
-//	$("#page-form").validate({
-//		rules: {
-//			phoneNumber: "required",
-//			phoneNumberRegEx: {
-//				usPhoneFormat: true,
-//				required: true
-//			},
-//			phoneNumberReg: "required"
-//		},
-//		submitHandler: function (form) {
-//			alert("submitted.");
-//		}
-//	});
-//	$("#phone").mask("?(999) 999-9999 x999999");
-
-//	$.ajax({
-//		type: 'POST',
-//		url: "path/to/api",
-//		data: "banana=yellow",
-//		success: function (data) {
-//			alert("Success: " + data);
-//		}
-//	});
-
 });

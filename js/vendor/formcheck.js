@@ -10,7 +10,7 @@
     if(!is_mobile()){
       
       if( $('._phone').exists()){
-        $('._phone').mask('+999(99) 999-99-99');
+        $('._phone').mask('+999 (99) 999-99-99');
       }
       
       if( $('.form_check').exists()){
@@ -98,7 +98,8 @@
               lightEmpty();
               return false
             } else {
-              form.submit();
+				loadForm();
+				return false;
             }
           });
           
