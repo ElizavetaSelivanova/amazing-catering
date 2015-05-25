@@ -16,8 +16,9 @@ $(document).keydown(function (e) {
 });
 $(document).ready(function(){
 //	height main bg
-	var defaultHeight = $('.page-section_main__bg').height();
-	$(window).on('resize load', function(){
+
+	$(window).on('load resize', function(){
+		var defaultHeight = $('.page-section._main').height();
 		var menuHeight = $('.page-menu._header').innerHeight(),
 			newHeight = defaultHeight - menuHeight;
 		$('.page-section_main__bg').css('height', newHeight + 'px');

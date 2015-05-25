@@ -29,7 +29,7 @@ body{max-width: 1600px; min-width: 960px; font-family: "Open Sans", Arial, Helve
         .flexbox .page-section-content._align{display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; height: 100%;}
         .page-menu{height: 210px; width: 100%; background-color: #fff; position: relative;
             -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;}
-            .flexbox .page-grids{display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex;flex-direction: row;justify-content: space-between;}
+            .flexbox .page-grids{display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; -webkit-flex-direction: row;flex-direction: row; -webkit-justify-content: space-between; justify-content: space-between;}
                 .page-grid{display: inline-block; vertical-align: top;
                     -webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}
                 /*grids sizes*/
@@ -150,9 +150,13 @@ body{max-width: 1600px; min-width: 960px; font-family: "Open Sans", Arial, Helve
 	/*footer*/
 .page-footer{width: 100vw;}
 	.page-menu._footer{padding: 35px 0 0;}
-		.page-copyright{text-align: right; line-height: 23px; opacity: .5;}
+		.page-copyright{text-align: right; line-height: 23px;}
     ._footer img{  margin-left: 0;}
     ._footer ._min{padding: 3px 0 0;white-space: nowrap;}
+	.bottom-link{color: #000; font-size: 13px; text-decoration: none; margin: 11px 0 0; display: inline-block; vertical-align: top;}
+		.bottom-link:visited, .bottom-link:active, .bottom-link:focus{color: #000;}
+		.bottom-link:hover{color: #65b33e; text-decoration: underline;}
+		.bottom-link._fb{margin-right: 15px;}
 
     /*modals*/
     html._modal_open{overflow: hidden;}
@@ -171,14 +175,14 @@ body{max-width: 1600px; min-width: 960px; font-family: "Open Sans", Arial, Helve
             .page-bottom_green h5{padding-bottom: 10px;}
         .page-bottom_form{padding: 20px 40px 55px; background: #fff; position: relative;}
 
-    .page-modal-list__i._bar{background: url("../img/bar.jpg") 100% 0 no-repeat #f3f3f3;}
-    .page-modal-list__i._cake{background: url("../img/cake.jpg") 100% 0 no-repeat #f3f3f3;}
-    .page-modal-list__i._design{background: url("../img/hall.jpg") 100% 0 no-repeat #f3f3f3;}
-    .page-modal-list__i._select_area{background: url("../img/hall.jpg") 100% 0 no-repeat #f3f3f3;}
-    .page-modal-list__i._pizza{background: url("../img/pizza.jpg") 100% 0 no-repeat #f3f3f3;}
-    .page-modal-list__i._candy{background: url("../img/candy.jpg") 100% 0 no-repeat #f3f3f3;}
-    .page-modal-list__i._auto{background: url("../img/auto.jpg") 100% 0 no-repeat #f3f3f3;}
-    .page-modal-list__i._photo{background: url("../img/photo.jpg") 100% 0 no-repeat #f3f3f3;}
+    .page-modal-list__i._bar .page-modal-content{background: url("../img/bar.jpg") 100% 0 no-repeat #f3f3f3;}
+    .page-modal-list__i._cake .page-modal-content{background: url("../img/cake.jpg") 100% 0 no-repeat #f3f3f3;}
+    .page-modal-list__i._design .page-modal-content{background: url("../img/hall.jpg") 100% 0 no-repeat #f3f3f3;}
+    .page-modal-list__i._select_area .page-modal-content{background: url("../img/hall.jpg") 100% 0 no-repeat #f3f3f3;}
+    .page-modal-list__i._pizza .page-modal-content{background: url("../img/pizza.jpg") 100% 0 no-repeat #f3f3f3;}
+    .page-modal-list__i._candy .page-modal-content{background: url("../img/candy.jpg") 100% 0 no-repeat #f3f3f3;}
+    .page-modal-list__i._auto .page-modal-content{background: url("../img/auto.jpg") 100% 0 no-repeat #f3f3f3;}
+    .page-modal-list__i._photo .page-modal-content{background: url("../img/photo.jpg") 100% 0 no-repeat #f3f3f3;}
         .page-modal-list__i .section-price{margin: 42px 45px 3px 0;}
 	.page-form .page-grid{vertical-align: bottom;}
 		.page-bottom_form .page-bottom_green{display: none; position: absolute; bottom: 0; left: 0; width: 100%; height: 100%;
@@ -199,9 +203,9 @@ body{max-width: 1600px; min-width: 960px; font-family: "Open Sans", Arial, Helve
     h6{font-size: 17px; line-height: 27px;}
     p{font-size: 15px;}
     p._min{font-size: 13px;}
-	a{font-size: 15px; text-decoration: underline; color: #fff;}
-	a:visited, a:focus, a:active{color: #fff; text-decoration: underline;}
-	a:hover{text-decoration: none; color: #fff;}
+	a{font-size: 15px; text-decoration: none; color: #fff;}
+	a:visited, a:focus, a:active{color: #fff; text-decoration: none;}
+	a:hover{text-decoration: underline; color: #fff;}
 
     /*old browsers or no flexbox*/
     .no-flexbox .page-grids{display: block; text-align: center;}
