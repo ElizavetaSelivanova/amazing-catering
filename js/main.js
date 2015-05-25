@@ -82,7 +82,10 @@ $(document).ready(function(){
 			}
 		};
 	}
-	var top = new parallaxAll($('.page-section_main__bg'), $('.page-title'));
+	if(!Modernizr.touch){
+		var top = new parallaxAll($('.page-section_main__bg'), $('.page-title'));
+	}
+
 
 //	hide elements
 	function scrollPage(){
@@ -104,7 +107,12 @@ $(document).ready(function(){
 			return ((elemTop <= docViewBottom) && (elemBottom >= docViewTop));
 		};
 	}
-	var scrollFunction = new scrollPage();
+	if(!Modernizr.touch){
+		var scrollFunction = new scrollPage();
+	} else{
+		$('.page-hide-block').addClass('_visible');
+	}
+
 
 //    scroll function
     var massTopValue = [],
